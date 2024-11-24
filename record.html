@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大學事跡</title>
+    <style>
+        /* 讓表格顯示在畫面中間 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        p {
+            margin-bottom: 6px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+    </style>
+</head>
+<body>
+<p>在學期間: </p>
+<table>
+    <thead>
+        <tr>
+            <th>時期</th>
+            <th>修課紀錄</th>
+            <th>其他</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>大一上</td>
+            <td>
+                <form>
+                    <label>
+                        <input type="checkbox" id="course-1-1" name="courses" value="程式設計(一)">
+                        程式設計(一)
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-1-2" name="courses" value="基礎電子學">
+                        基礎電子學
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-1-3" name="courses" value="微積分乙(一)">
+                        微積分乙(一)
+                    </label>
+                </form>
+            </td>
+            <td><p>參加python訓練營 -> 用pygame做了一個飛機射擊遊戲</p></td>
+        </tr>
+        <tr>
+            <td>大一下</td>
+            <td>
+                <form>
+                    <label>
+                        <input type="checkbox" id="course-2-1" name="courses" value="微積分乙(二)">
+                        微積分乙(二)
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-2-2" name="courses" value="數位邏輯">
+                        數位邏輯
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-2-3" name="courses" value="離散數學">
+                        離散數學
+                    </label>
+                </form>
+            </td>
+            <td><p>參加台聯大轉學考->錄取中央資管 放棄</p></td>
+        </tr>
+        <tr>
+            <td>大二上</td>
+            <td>
+                <form>
+                    <label>
+                        <input type="checkbox" id="course-3-1" name="courses" value="系統程式">
+                        系統程式
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-3-2" name="courses" value="普物乙(一)">
+                        普物乙(一)
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-3-3" name="courses" value="線性代數">
+                        線性代數
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-3-4" name="courses" value="程式設計(一)">
+                        程式設計(一)
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-3-5" name="courses" value="機率論">
+                        機率論
+                    </label>
+                </form>
+            </td>
+            <td>
+                <p>通識專題佳作獎 112/09/04 (大一下做的那時當組長)</p>
+                <p>TOPC</p>
+                <p>NCPC初賽 112/09/24</p>
+                <p>NCPC複賽 112/10/15</p>
+                <p>NCPC 複賽佳作 得獎日期:112/12/03</p>
+                <p>簡易組譯器 分數: 97(系統程式)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>大二下</td>
+            <td>
+                <form>
+                    <label>
+                        <input type="checkbox" id="course-4-1" name="courses" value="作業系統">
+                        作業系統
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-4-2" name="courses" value="計算機結構">
+                        計算機結構
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-4-3" name="courses" value="計算機網路">
+                        計算機網路
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-4-4" name="courses" value="普物乙(二)">
+                        普物乙(二)
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-4-5" name="courses" value="程式語言結構">
+                        程式語言結構
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-4-6" name="courses" value="資料庫理論">
+                        資料庫理論
+                    </label><br>
+                    <label>
+                        <input type="checkbox" id="course-4-7" name="courses" value="演算法">
+                        演算法
+                    </label>
+                </form>
+            </td>
+            <td>
+                <p>五育獎學金(智育)得獎</p>
+                <p>作業系統trace code * n</p>
+                <p>排球平台 分數: 85.65 (資料庫理論)</p> 
+            </td>
+        </tr>
+        <tr>
+            <td>大三上</td>
+            <td>
+                <label>
+                    <input type="checkbox" id="course-5-1" name="courses" value="專題">
+                    專題
+                </label><br>
+                <label>
+                    <input type="checkbox" id="course-5-2" name="courses" value="軟體工程">
+                    軟體工程
+                </label><br>
+                <label>
+                    <input type="checkbox" id="course-5-3" name="courses" value="資料探勘">
+                    資料探勘
+                </label><br>
+                <label>
+                    <input type="checkbox" id="course-5-4" name="courses" value="資料結構">
+                    資料結構
+                </label><br>
+                <label>
+                    <input type="checkbox" id="course-5-5" name="courses" value="網路計算與XML">
+                    網路計算與XML
+                </label>
+            </td>
+            <td><p>軟工當PM 、前端組組員->會有一個專案產出</p>
+                <p>資結hw記得放到github</p>
+                <p>資料探勘作業記得放github</p>
+                <p>XML作業記得放github</p>
+                <p>資料探勘會有專題</p>
+                <p>專題(可能會發paper)</p>
+                <p>渣打銀行參訪</p>
+                <p>Appier參訪</p>
+                <p>TOPC</p>
+                <p>NCPC初賽</p>
+                <p>NCPC複賽 佳作</p>
+                <p>ICPC區域賽 (台中站) 銅牌</p>
+                <p>考第一次CPE  2/7題  515名  36.5%</p>                 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    window.onload = function() {
+        var checkboxes = [
+            'course-1-1', 'course-1-2', 'course-1-3',
+            'course-2-1', 'course-2-2', 'course-2-3',
+            'course-3-1', 'course-3-2', 'course-3-3', 'course-3-4', 'course-3-5',
+            'course-4-1', 'course-4-2', 'course-4-3', 'course-4-4', 'course-4-5', 'course-4-6', 'course-4-7',
+            'course-5-1', 'course-5-2', 'course-5-3', 'course-5-4', 'course-5-5'
+        ];
+
+        checkboxes.forEach(function(id) {
+            var checkbox = document.getElementById(id);
+            if (localStorage.getItem(id) === 'true') {
+                checkbox.checked = true;
+            }
+        });
+    }
+
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        });
+    });
+</script>
+
+</body>
+</html>
