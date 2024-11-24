@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大學紀錄</title>
+    <style>
+        .information {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 80%;
+            height: 50vh;
+            background-color: lightyellow;
+            margin: 30px auto;
+            padding: 10px;
+            position: relative;
+        }
+
+        .picture {
+            width: 10%;
+            height: 40%;
+            margin: 30px;
+            background-color: white;
+        }
+
+        ul {
+            list-style: none;
+            margin: 30px;
+            padding-left: 20px;
+            width: 50%;
+        }
+
+        .classification-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: 80%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .classification {
+            width: 30%;
+            height: 100%;
+            background-color: #D2B48C;
+            padding: 10px;
+            text-align: center;
+            color: black;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .information {
+                flex-direction: column; 
+                height: auto;
+            }
+
+            .picture {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                width: 100%;
+                padding-left: 10px;
+            }
+
+            .classification-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .classification {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="information">
+        <div class="picture"></div>
+        <ul>
+            <li>姓名: 楊子萱</li>
+            <li>性別: 女</li>
+            <li>生日: 2004/01/12</li>
+            <li>血型: B</li>
+            <li>mbti: INTJ</li>
+            <li>就讀科系: 國立台灣師範大學 資訊工程學系</li>
+            <li>年級: 大三</li>
+            <li>技能: C/C++/Vue/HTML/Javascript/CSS/OS/資料庫...</li>
+            <li>興趣: 鋼琴/旅遊/美食/烹飪/穿搭/理財...</li>
+        </ul>
+    </div>
+    <div class="classification-container">
+        <div class="classification" role="link" tabindex="0" onclick="window.location.href='business_card.html'">
+            個人名片
+        </div>
+        <div class="classification" role="link" tabindex="1" onclick="window.location.href='record.html'">
+            大學事跡
+        </div>
+        <div class="classification" role="link" tabindex="2" onclick="window.location.href='memory.html'">
+            大學照片回憶錄
+        </div>
+    </div>
+</body>
+</html>
