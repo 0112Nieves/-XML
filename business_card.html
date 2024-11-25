@@ -15,12 +15,21 @@
             font-family: Arial, sans-serif;
         }
 
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+        }
+
         #business-card {
             border: 2px solid black;
             border-radius: 8px;
             padding: 20px;
-            margin: 20px auto;
-            max-width: 500px;
+            max-width: 300px;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
             font-family: Arial, sans-serif;
         }
@@ -32,11 +41,50 @@
         #business-card ul {
             padding-left: 20px;
         }
+
+        .button-container {
+            text-align: center;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #click-count {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            #business-card {
+                width: 100%;
+                max-width: 100%;
+                text-align: center;
+            }
+
+            canvas {
+                width: 150px;
+                height: 150px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="business-card"></div>
-    <canvas id="glow-button" width="200" height="200"></canvas>
+    <div class="container">
+        <div id="business-card"></div>
+
+        <div class="button-container">
+            <canvas id="glow-button" width="200" height="200"></canvas>
+            <div id="click-count">按鈕已被點擊 0 次</div>
+        </div>
+    </div>
 
     <script>
         const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
@@ -76,13 +124,18 @@
             <ul>${emailList}</ul>
             <p><strong>Occupation:</strong> ${occupation}</p>
         `;
-        
-        // canvas
+
+        // Canvas按鈕邏輯
         const canvas = document.getElementById("glow-button");
         const ctx = canvas.getContext("2d");
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
         const radius = 70;
+
+        // 從 localStorage 中讀取點擊次數，若無則初始化為 0
+        let clickCount = parseInt(localStorage.getItem("clickCount"), 10) || 0;
+        const clickCountDiv = document.getElementById("click-count");
+        clickCountDiv.textContent = `支持度:  ${clickCount}`;
 
         function drawButton(isGlowing) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -122,6 +175,9 @@
 
         canvas.addEventListener("mouseup", () => {
             drawButton(false);
+            clickCount++;
+            localStorage.setItem("clickCount", clickCount); // 將最新的次數儲存到 localStorage
+            clickCountDiv.textContent = `支持度: ${clickCount}`;
         });
     </script>
 </body>
