@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 學號: 41147046S, 姓名: 楊子萱 -->
+<!-- 此為第三題 -> "郵政劃撥單" -->
+ <postal_Transfer_Order>
+    <title>郵政劃撥儲金存款通知單</title>
+    <payment>
+        <account>帳號
+            <digit>0</digit>
+            <digit>0</digit>
+            <digit>0</digit>
+            <digit>4</digit>
+            <digit>9</digit>
+            <digit>3</digit>
+            <digit>4</digit>
+            <digit>5</digit>
+        </account>
+        <account_Name>陽光基金會</account_Name>
+    </payment>
+    <dollar>
+        <dollar_Name>新台幣</dollar_Name>
+        <dollar_Information>(請用壹、貳、參、肆、伍、陸、柒、捌、玖、零等大寫並於數末加一整字)</dollar_Information>
+        <dollar_Much>玖玖玖玖玖玖玖零</dollar_Much>
+    </dollar>
+    <information>
+        <stamp>郵辦局收款戳</stamp>
+        <sender>寄款人
+            <sender_Name>楊子萱</sender_Name>
+            <sender_Phone>0970660360</sender_Phone>
+            <location>
+                <post_Code>116</post_Code>
+                <address>台北市文山區汀州路四段88號</address>
+            </location>
+            <sender_Code>9999</sender_Code>
+        </sender>
+    </information>
+ </postal_Transfer_Order>

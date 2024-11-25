@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保存勾選框狀態</title>
+</head>
+<body>
+    <h1>選擇你的興趣</h1>
+    <form>
+        <label>
+            <input type="checkbox" id="music" name="interests" value="music">
+            音樂
+        </label><br>
+        <label>
+            <input type="checkbox" id="sports" name="interests" value="sports">
+            運動
+        </label><br>
+        <label>
+            <input type="checkbox" id="reading" name="interests" value="reading">
+            閱讀
+        </label><br>
+        <input type="submit" value="提交">
+    </form>
+
+    <script>
+        // 當頁面加載時，從localStorage讀取勾選框的狀態並恢復
+        window.onload = function() {
+            var music = document.getElementById('music');
+            var sports = document.getElementById('sports');
+            var reading = document.getElementById('reading');
+            
+            // 根據localStorage中的數據來恢復勾選框狀態
+            if (localStorage.getItem('music') === 'true') {
+                music.checked = true;
+            }
+            if (localStorage.getItem('sports') === 'true') {
+                sports.checked = true;
+            }
+            if (localStorage.getItem('reading') === 'true') {
+                reading.checked = true;
+            }
+        }
+
+        // 在用戶改變勾選框時，將狀態保存到localStorage
+        document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+            });
+        });
+    </script>
+</body>
+</html>

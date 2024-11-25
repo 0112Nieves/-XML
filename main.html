@@ -41,14 +41,23 @@
         }
 
         .classification {
-            width: 30%;
-            height: 100%;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            color: black;
             background-color: #D2B48C;
             padding: 10px;
-            text-align: center;
-            color: black;
+            width: 30%;
+            height: 100%;
             box-sizing: border-box;
+            margin-bottom: 10px;
         }
+
+        a {
+            text-decoration: none;
+        }
+        
 
         @media (max-width: 768px) {
             .information {
@@ -75,6 +84,11 @@
                 width: 100%;
                 margin-bottom: 10px;
             }
+
+            a {
+                text-decoration: none;
+            }
+            
         }
     </style>
 </head>
@@ -94,15 +108,15 @@
         </ul>
     </div>
     <div class="classification-container">
-        <div class="classification" role="link" tabindex="0" onclick="window.location.href='business_card.html'">
+        <a class="classification" href="business_card.html" tabindex="0">
             個人名片
-        </div>
-        <div class="classification" role="link" tabindex="1" onclick="window.location.href='record.html'">
+        </a>
+        <a class="classification" href="record.html" tabindex="1">
             大學事跡
-        </div>
-        <div class="classification" role="link" tabindex="2" onclick="window.location.href='memory.html'">
+        </a>
+        <a class="classification" href="memory.html" tabindex="2">
             大學照片回憶錄
-        </div>
+        </a>
     </div>
 </body>
 </html>
