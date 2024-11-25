@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessCard>
+    <title>Business Card</title>
+    <contactInformation>
+        <name>楊子萱</name>
+        <phone>0970-660-360</phone>
+        <emails>
+            <email>930112ab@gmail.com</email>
+            <email>41147046S@gapps.ntnu.edu.tw</email>
+        </emails>
+        <occupation>國立臺灣師範大學 資訊工程學系 學生</occupation>
+    </contactInformation>
+</businessCard>
