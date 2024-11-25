@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人名片</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        #business-card {
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            font-family: Arial, sans-serif;
+        }
+
+        #business-card h2 {
+            text-align: center;
+        }
+
+        #business-card ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="business-card"></div>
+    <canvas id="glow-button" width="200" height="200"></canvas>
+
+    <script>
+        const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+        <businessCard>
+            <title>Business Card</title>
+            <contactInformation>
+                <name>楊子萱</name>
+                <phone>0970-660-360</phone>
+                <emails>
+                    <email>930112ab@gmail.com</email>
+                    <email>41147046s@gapps.ntnu.edu.tw</email>
+                </emails>
+                <occupation>國立臺灣師範大學 資訊工程學系 學生</occupation>
+            </contactInformation>
+        </businessCard>`;
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+
+        const title = xmlDoc.getElementsByTagName("title")[0]?.textContent || "No Title";
+        const name = xmlDoc.getElementsByTagName("name")[0]?.textContent || "Unknown Name";
+        const phone = xmlDoc.getElementsByTagName("phone")[0]?.textContent || "Unknown Phone";
+        const emails = xmlDoc.getElementsByTagName("email");
+        const occupation = xmlDoc.getElementsByTagName("occupation")[0]?.textContent || "Unknown Occupation";
+
+        let emailList = "";
+        for (let i = 0; i < emails.length; i++) {
+            emailList += `<li>${emails[i].textContent}</li>`;
+        }
+
+        const businessCardDiv = document.getElementById("business-card");
+        businessCardDiv.innerHTML = `
+            <h2>${title}</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Emails:</strong></p>
+            <ul>${emailList}</ul>
+            <p><strong>Occupation:</strong> ${occupation}</p>
+        `;
+        
+        // canvas
+        const canvas = document.getElementById("glow-button");
+        const ctx = canvas.getContext("2d");
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = 70;
+
+        function drawButton(isGlowing) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 光暈效果
+            if (isGlowing) {
+                const gradient = ctx.createRadialGradient(centerX, centerY, radius, centerX, centerY, radius + 30);
+                gradient.addColorStop(0, "rgba(255, 255, 0, 0.5)");
+                gradient.addColorStop(1, "rgba(255, 255, 0, 0)");
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius + 30, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // 圓形按鈕
+            ctx.fillStyle = "yellow";
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 按鈕文字
+            ctx.fillStyle = "black";
+            ctx.font = "20px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("支持", centerX, centerY);
+        }
+
+        // 初始化按鈕
+        drawButton(false);
+
+        // 點擊效果
+        canvas.addEventListener("mousedown", () => {
+            drawButton(true);
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            drawButton(false);
+        });
+    </script>
+</body>
+</html>

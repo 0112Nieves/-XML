@@ -3,50 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>保存勾選框狀態</title>
+    <title>SVG Button with Glow Effect</title>
+    <style>
+        svg {
+            display: block;
+            margin: 100px auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>選擇你的興趣</h1>
-    <form>
-        <label>
-            <input type="checkbox" id="music" name="interests" value="music">
-            音樂
-        </label><br>
-        <label>
-            <input type="checkbox" id="sports" name="interests" value="sports">
-            運動
-        </label><br>
-        <label>
-            <input type="checkbox" id="reading" name="interests" value="reading">
-            閱讀
-        </label><br>
-        <input type="submit" value="提交">
-    </form>
+    <svg id="glow-button" width="200" height="200" viewBox="0 0 200 200">
+        <!-- 光暈效果 -->
+        <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255, 255, 0, 0.5)" stroke-width="20" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="mousedown" end="mouseup" />
+        </circle>
+
+        <!-- 按鈕本體 -->
+        <circle cx="100" cy="100" r="70" fill="#FF5722" stroke="#000" stroke-width="3"></circle>
+
+        <!-- 文字 -->
+        <text x="100" y="100" text-anchor="middle" alignment-baseline="central" fill="#FFF" font-size="20">Click Me</text>
+    </svg>
 
     <script>
-        // 當頁面加載時，從localStorage讀取勾選框的狀態並恢復
-        window.onload = function() {
-            var music = document.getElementById('music');
-            var sports = document.getElementById('sports');
-            var reading = document.getElementById('reading');
-            
-            // 根據localStorage中的數據來恢復勾選框狀態
-            if (localStorage.getItem('music') === 'true') {
-                music.checked = true;
-            }
-            if (localStorage.getItem('sports') === 'true') {
-                sports.checked = true;
-            }
-            if (localStorage.getItem('reading') === 'true') {
-                reading.checked = true;
-            }
-        }
+        const button = document.getElementById("glow-button");
+        button.addEventListener("mousedown", () => {
+            const glow = button.querySelector("circle:first-child");
+            glow.style.opacity = 1;
+        });
 
-        // 在用戶改變勾選框時，將狀態保存到localStorage
-        document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
-            checkbox.addEventListener('change', function() {
-                localStorage.setItem(checkbox.id, checkbox.checked);
-            });
+        button.addEventListener("mouseup", () => {
+            const glow = button.querySelector("circle:first-child");
+            glow.style.opacity = 0;
         });
     </script>
 </body>
