@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<books><Item><BookId>0001</BookId><BookTitle>微積分</BookTitle><book>數學</book><category>張三</category><author>300</author><price>數學出版社</price></Item><Item><BookId>0002</BookId><BookTitle>物理學</BookTitle><book>科學</book><category>李四</category><author>250</author><price>科學出版社</price></Item><Item><BookId>0003</BookId><BookTitle>線性代數</BookTitle><book>數學</book><category>王五</category><author>350</author><price>數學出版社</price></Item></books>

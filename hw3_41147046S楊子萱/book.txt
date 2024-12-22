@@ -1,0 +1,4 @@
+BookId   BookTitle   book category   author    price   publisher
+0001     微積分      數學            張三      300     數學出版社
+0002     物理學      科學            李四      250     科學出版社
+0003     線性代數    數學            王五      350     數學出版社
