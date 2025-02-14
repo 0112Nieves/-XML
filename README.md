@@ -8,10 +8,10 @@
 - hw2
   - 設計一個純HTML5+CSS網頁的網站
     - At least one page with SVG or <canvas> scalar graphics
-    - One page show your resume.xml (or name card in HW1)
+    - One page show my resume (named main.html)
     - Use WCAG 2.1 Web Accessible Design (at least 3 items)
-    - Please use RWD for laptop and mobile devices
-  - 補充: record.html可以儲存過去打勾過的項目，但變更過資料夾位置後會更新成最原本(皆沒打勾)的樣子
+    - use RWD for laptop and mobile devices (Partially consistent)
+  - 注意: record.html可以儲存過去打勾過的項目，但變更過資料夾位置後會更新成最原本(皆沒打勾)的樣子
   - TODO: memory.html可更美化或進行一些分類
 - hw3
   - XML Generator
